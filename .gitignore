@@ -1,0 +1,3 @@
+sim/.build/
+sim/__pycache__/
+*.py[cod]
