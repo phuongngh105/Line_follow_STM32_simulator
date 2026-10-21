@@ -4,7 +4,7 @@ A Python simulator for testing a line-following car with either the built-in PID
 
 ## Install
 
-```powershell
+```powershell Cái này phải chạy để dịch từ c của STM32 sang Python/This is must run
 python -m pip install pygame-ce ziglang
 ```
 
