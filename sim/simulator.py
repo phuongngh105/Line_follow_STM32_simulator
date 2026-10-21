@@ -847,11 +847,8 @@ class App:
             body = self.oriented_rect(car.x + fx * mid, car.y + fy * mid, th, c1 - c0, wd * 0.8)
             pg.draw.polygon(screen, (230, 90, 60), body, 3)
             wl, ww = px(45), max(3, px(18))
-            for side in (-1, 1):                              # rear wheels
-                pg.draw.polygon(screen, (60, 60, 60), self.oriented_rect(
-                    car.x + lx * side * wd / 2, car.y + ly * side * wd / 2, th, wl, ww))
             steer_th = th - math.radians(car.delta)           # left (+) = heading decreases
-            for side in (-1, 1):                              # front wheels, turned by the servo
+            for side in (-1, 1):                              # the car's only 2 wheels: at the front, turned by the servo
                 pg.draw.polygon(screen, (60, 60, 60), self.oriented_rect(
                     car.x + fx * wb + lx * side * wd / 2, car.y + fy * wb + ly * side * wd / 2,
                     steer_th, wl, ww))
