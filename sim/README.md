@@ -1,3 +1,5 @@
+#Yes đống code này đc Gen bằng CLaude nhưng nó hoạt động
+
 # Simulator chạy NGUYÊN code STM32 trong `src/`
 
 Simulator biên dịch **toàn bộ project Keil của bạn** (`MDK-ARM/EIU_MCR.uvprojx`: `Core/Src/*.c`, `MyLib/*.c`, `App/*.c`)
@@ -17,7 +19,7 @@ python sim/simulator.py --firmware <đường dẫn tới thư mục src>
 Nếu thư mục `src/` nằm cạnh `sim/` thì không cần `--firmware`. Kiểm tra không cần cửa sổ: thêm `--selftest`.
 Chỉ chạy được trên Windows và Linux (macOS không cho ánh xạ địa chỉ thấp).
 
-## Những gì chạy bằng code của bạn
+## 
 1. `main()` của bạn chạy thật: `HAL_Init`, `SystemClock_Config`, `MX_*_Init`, `HAL_*_MspInit`.
 2. `main.c` hiện **comment** `robot_init(...)`, `HAL_TIM_Base_Start_IT(&htim1)` và chưa gọi `loop()`.
    Simulator tự gọi đúng các dòng đó rồi lặp `loop(&MCR_robot)`. Khi bạn bỏ comment và đưa `loop()` vào `while(1)`,
