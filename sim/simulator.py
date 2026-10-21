@@ -184,6 +184,7 @@ class Car:
         v = (self.vl + self.vr) / 2.0
         omega = v * math.tan(math.radians(self.delta)) / px(DIM.wheelbase)
         self.th -= omega * dt                                  # left turn = heading decreases
+        self.th += (self.vl - self.vr) / px(DIM.car_wid) * dt  # wheel speed difference also yaws the car (pivot turns)
         self.x += v * math.cos(self.th) * dt
         self.y += v * math.sin(self.th) * dt
 
